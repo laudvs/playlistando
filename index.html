@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="left-panel"></div>
+    <div class="right-panel">
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify logo">
+            <p>Crie playlists apenas com um comando!</p>
+            <button id="spotify-login">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg" alt="Spotify icon">
+                Conectar com Spotify
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const CLIENT_ID = 'SEU_CLIENT_ID'; // Substitua pelo seu Client ID do Spotify
+        const REDIRECT_URI = 'SUA_REDIRECT_URI'; // Substitua pela URL de redirecionamento configurada no Spotify
+        const AUTH_ENDPOINT = 'https://accounts.spotify.com/authorize';
+        const RESPONSE_TYPE = 'token';
+
+        document.getElementById('spotify-login').addEventListener('click', () => {
+            const authUrl = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&response_type=${RESPONSE_TYPE}&scope=playlist-modify-public playlist-modify-private`;
+            window.location.href = authUrl;
+        });
+    </script>
+</body>
+</html>
