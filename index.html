@@ -20,39 +20,15 @@
     </div>
 
     <script>
-        // Configurações do Spotify
-        const CLIENT_ID = 'SEU_CLIENT_ID'; // Substitua pelo seu Client ID
-        const REDIRECT_URI = 'SUA_REDIRECT_URI'; // Substitua pela URL de redirecionamento configurada
+        const CLIENT_ID = 'd83eef9d38aa439fa19b1a9898fdab09';
+        const REDIRECT_URI = 'http://localhost:3000/inicio.html';
         const AUTH_ENDPOINT = 'https://accounts.spotify.com/authorize';
         const RESPONSE_TYPE = 'token';
-        const SCOPES = 'playlist-modify-public playlist-modify-private';
 
-        // Função para iniciar o processo de login
         document.getElementById('spotify-login').addEventListener('click', () => {
-            const authUrl = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&response_type=${RESPONSE_TYPE}&scope=${encodeURIComponent(SCOPES)}`;
+            const authUrl = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&response_type=${RESPONSE_TYPE}&scope=playlist-modify-public playlist-modify-private`;
             window.location.href = authUrl;
         });
-
-        // Função para capturar o token da URL após o login
-        function getTokenFromUrl() {
-            const hash = window.location.hash.substring(1);
-            const params = {};
-            hash.split('&').forEach(param => {
-                const [key, value] = param.split('=');
-                params[key] = value;
-            });
-            return params.access_token;
-        }
-
-        // Verifica se o token está presente e exibe uma mensagem (opcional)
-        const token = getTokenFromUrl();
-        if (token) {
-            console.log('Token de acesso obtido:', token);
-            // Você pode salvar o token no localStorage ou prosseguir para usar a API do Spotify
-            localStorage.setItem('spotify_access_token', token);
-            // Redirecionar para a próxima página, se necessário
-            // window.location.href = 'sua_proxima_pagina.html';
-        }
     </script>
 </body>
 </html>
