@@ -1,32 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spotify Login</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div class="left-panel"></div>
-    <div class="right-panel">
-        <div class="card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify logo">
-            <p>Crie playlists apenas com um comando!</p>
-            <button id="spotify-login">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg" alt="Spotify icon">
-                Conectar com Spotify
-            </button>
-        </div>
+    <div class="container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify logo">
+        <h1>Crie playlists apenas</h1>
+        <p>com um comando!</p>
+        <button id="spotify-login">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg" alt="Spotify icon">
+            Conectar com Spotify
+        </button>
     </div>
 
     <script>
-        const CLIENT_ID = 'd83eef9d38aa439fa19b1a9898fdab09';
-        const REDIRECT_URI = 'http://localhost:3000/inicio.html';
+        const CLIENT_ID = 'd83eef9d38aa439fa19b1a9898fdab09'; 
+        const REDIRECT_URI = 'http://localhost:3000/inicio.html'; 
         const AUTH_ENDPOINT = 'https://accounts.spotify.com/authorize';
         const RESPONSE_TYPE = 'token';
+        const SCOPE = 'playlist-modify-public playlist-modify-private';
 
         document.getElementById('spotify-login').addEventListener('click', () => {
-            const authUrl = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&response_type=${RESPONSE_TYPE}&scope=playlist-modify-public playlist-modify-private`;
+            const authUrl = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&response_type=${RESPONSE_TYPE}&scope=${encodeURIComponent(SCOPE)}`;
             window.location.href = authUrl;
         });
     </script>
