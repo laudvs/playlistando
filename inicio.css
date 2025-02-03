@@ -1,69 +1,137 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-    margin: 0;
-    font-family: 'Circular', 'Spotify Circular', 'Montserrat', sans-serif;
-    display: flex;
-    height: 100vh;
+    font-family: 'Arial', sans-serif;
     background-color: #191414;
-    color: white;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
 }
 
-.left-panel {
-    background-color: #1DB954;
-    flex: 1;
-}
-
-.right-panel {
-    flex: 1;
+header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    background-color: #191414;
-}
-
-.card {
-    background-color: #282828;
+    background-color: #1DB954;
     color: white;
-    border-radius: 16px;
-    padding: 25px;
-    text-align: center;
-    width: 320px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.card img {
-    width: 60px;
+    padding: 10px 20px;
+    border-radius: 8px;
     margin-bottom: 20px;
 }
 
-.card p {
-    font-size: 18px;
-    margin: 10px 0;
+header button {
+    background-color: #191414;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+header button:hover {
+    background-color: #282828;
+}
+
+header h1 {
+    font-size: 24px;
     font-weight: bold;
 }
 
-.card button {
-    margin-top: 20px;
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #1DB954;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    resize: vertical;
+}
+
+textarea:focus {
+    border-color: #1DB954;
+    outline: none;
+}
+
+#generatePlaylist {
     background-color: #1DB954;
-    color: black;
+    color: white;
     border: none;
-    border-radius: 25px;
-    padding: 12px 24px;
+    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#generatePlaylist:hover {
+    background-color: #53bb77;
+}
+
+#playlist-container {
+    margin-bottom: 20px;
+}
+
+#playlist-container a {
+    color: #1DB954;
+    text-decoration: none;
     font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.3s ease-in-out;
 }
 
-.card button:hover {
-    background-color: #1ed760;
+#playlist-container a:hover {
+    text-decoration: underline;
 }
 
-.card button img {
-    margin-right: 8px;
-    width: 22px;
+#playlist-history {
+    list-style-type: none;
+}
+
+#playlist-history li {
+    background-color: #f4f4f9;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+#playlist-history li a {
+    color: #1DB954;
+    text-decoration: none;
+}
+
+#playlist-history li a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header button {
+        margin-top: 10px;
+    }
+
+    .container {
+        padding: 15px;
+    }
 }
