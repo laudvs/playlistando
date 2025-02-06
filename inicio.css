@@ -1,3 +1,10 @@
+:root {
+    --spotify-green: #1DB954;
+    --spotify-black: #191414;
+    --spotify-white: #FFFFFF;
+    --spotify-gray: #B3B3B3;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,31 +13,36 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #191414;
-    color: #333;
+    background-color: var(--spotify-black);
+    color: var(--spotify-gray);
     line-height: 1.6;
     padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #1DB954;
-    color: white;
+    background-color: var(--spotify-green);
+    color: var(--spotify-white);
     padding: 10px 20px;
     border-radius: 8px;
     margin-bottom: 20px;
 }
 
 header button {
-    background-color: #191414;
-    color: white;
+    background-color: var(--spotify-black);
+    color: var(--spotify-white);
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
+    transition: background-color 0.3s ease;
 }
 
 header button:hover {
@@ -43,16 +55,18 @@ header h1 {
 }
 
 .container {
-    background-color: white;
+    background-color: var(--spotify-white);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
 }
 
 .container h2 {
     font-size: 20px;
     margin-bottom: 15px;
-    color: #1DB954;
+    color: var(--spotify-green);
 }
 
 textarea {
@@ -63,27 +77,29 @@ textarea {
     font-size: 16px;
     margin-bottom: 15px;
     resize: vertical;
+    transition: border-color 0.3s ease;
 }
 
 textarea:focus {
-    border-color: #1DB954;
+    border-color: var(--spotify-green);
     outline: none;
 }
 
 #generatePlaylist {
-    background-color: #1DB954;
-    color: white;
+    background-color: var(--spotify-green);
+    color: var(--spotify-white);
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 15px 20px;
+    border-radius: 25px;
     cursor: pointer;
     font-size: 16px;
     width: 100%;
     margin-bottom: 20px;
+    transition: background-color 0.3s ease;
 }
 
 #generatePlaylist:hover {
-    background-color: #53bb77;
+    background-color: #1ed760;
 }
 
 #playlist-container {
@@ -91,9 +107,10 @@ textarea:focus {
 }
 
 #playlist-container a {
-    color: #1DB954;
+    color: var(--spotify-green);
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 #playlist-container a:hover {
@@ -110,11 +127,13 @@ textarea:focus {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ddd;
+    transition: background-color 0.3s ease;
 }
 
 #playlist-history li a {
-    color: #1DB954;
+    color: var(--spotify-green);
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 #playlist-history li a:hover {
@@ -133,5 +152,6 @@ textarea:focus {
 
     .container {
         padding: 15px;
+        margin: 0 10px;
     }
 }
